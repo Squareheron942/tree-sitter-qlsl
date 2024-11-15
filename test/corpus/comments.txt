@@ -1,0 +1,7 @@
+==========
+Line comment
+==========
+; This is a comment
+---
+(program
+    (line_comment))

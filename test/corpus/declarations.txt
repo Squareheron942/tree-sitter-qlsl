@@ -1,0 +1,37 @@
+==========
+Constant texture
+==========
+tex0 kitten
+---
+(program
+	(declaration
+		(texture)
+		(identifier)))
+		
+==========
+Hex colour declaration
+==========
+constant #FFFFFFFF
+---
+(program
+	(declaration
+		(constant
+			(color))))
+			
+==========
+Per-component colour declaration
+==========
+constant (0.0, 1, 0, 1.0)
+---
+(program
+	(declaration
+		(constant
+			(color 
+				(number
+					(float))
+				(number
+					(int))
+				(number
+					(int))
+				(number
+					(float))))))

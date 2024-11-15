@@ -1,0 +1,103 @@
+==========
+Combine instruction -- One arg
+==========
+replace tex0
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(tevsrc (texture)))))
+
+==========
+Combine instruction -- Two args
+==========
+add tex0, constant
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(tevsrc (texture))
+			(tevsrc (gpu_input)))))
+
+==========
+Combine instruction -- Three args
+==========
+interpolate tex0, constant, tex3
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(tevsrc (texture))
+			(tevsrc (gpu_input))
+			(tevsrc (texture)))))
+
+==========
+Alpha test
+==========
+<<<<<<< HEAD
+alphatest 0.5
+=======
+alpha 0.5
+>>>>>>> 535f5ea (Initial commit)
+---
+(program
+	(instr
+		(selectorinstr
+			(alphatest
+				(number
+					(float))))))
+
+==========
+Normal map
+==========
+normal tex3, bump
+---
+(program
+	(instr
+		(selectorinstr
+			(normal
+				(texture)
+				(normalselector)))))
+
+==========
+Buffer write mask
+==========
+write color
+---
+(program
+	(instr
+		(selectorinstr
+<<<<<<< HEAD
+			(write
+				(writemask)))))
+=======
+			(write))))
+>>>>>>> 535f5ea (Initial commit)
+
+==========
+Depth test
+==========
+depthtest greater
+---
+(program
+	(instr
+		(selectorinstr
+			(depthtest
+<<<<<<< HEAD
+				(testfunc)))))
+
+==========
+Culling
+==========
+cull back
+---
+(program
+	(instr
+		(selectorinstr
+			(cull
+=======
+>>>>>>> 535f5ea (Initial commit)
+				(testfunc)))))

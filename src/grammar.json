@@ -1,0 +1,728 @@
+{
+  "name": "combiner",
+  "rules": {
+    "program": {
+<<<<<<< HEAD
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "version"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "STRING",
+            "value": "\n"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "section"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "REPEAT1",
+                        "content": {
+                          "type": "STRING",
+                          "value": "\n"
+                        }
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "section"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "REPEAT1",
+                      "content": {
+                        "type": "STRING",
+                        "value": "\n"
+                      }
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+=======
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_item"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "REPEAT1",
+                    "content": {
+                      "type": "STRING",
+                      "value": "\n"
+                    }
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_item"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "STRING",
+                    "value": "\n"
+                  }
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+>>>>>>> 535f5ea (Initial commit)
+            }
+          ]
+        },
+        {
+<<<<<<< HEAD
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_item"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "REPEAT1",
+                        "content": {
+                          "type": "STRING",
+                          "value": "\n"
+                        }
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_item"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "REPEAT1",
+                      "content": {
+                        "type": "STRING",
+                        "value": "\n"
+                      }
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+=======
+          "type": "BLANK"
+>>>>>>> 535f5ea (Initial commit)
+        }
+      ]
+    },
+    "_item": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "instr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "declaration"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "type": "SYMBOL",
+          "name": "version"
+>>>>>>> 535f5ea (Initial commit)
+        }
+      ]
+    },
+    "combinefunc": {
+      "type": "PATTERN",
+      "value": "add|sub|modulate|replace|add_signed|interpolate|dot3_rgb|dot3_rgba|multiply_add|add_multiply"
+    },
+    "tevsrc": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "texture"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "gpu_input"
+        }
+      ]
+    },
+    "combineinstr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "kind",
+          "content": {
+            "type": "SYMBOL",
+            "name": "combinefunc"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "tevsrc"
+                },
+                {
+                  "type": "REPEAT",
+                  "content": {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": ","
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "tevsrc"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ","
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "identifier": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9_$]+"
+    },
+    "input": {
+      "type": "PATTERN",
+      "value": ".in[0-9]+"
+    },
+    "instr": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "combineinstr"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selectorinstr"
+        }
+      ]
+    },
+    "declaration": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "texture"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "input"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constant"
+        }
+      ]
+    },
+    "selectorinstr": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "alphatest"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "normal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "write"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "depthtest"
+<<<<<<< HEAD
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cull"
+=======
+>>>>>>> 535f5ea (Initial commit)
+        }
+      ]
+    },
+    "texture": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "PATTERN",
+          "value": "(tex[0-3])"
+        }
+      }
+    },
+    "gpu_input": {
+      "type": "PATTERN",
+      "value": "primary|fragment_primary|fragment_secondary|previous|constant|previous_buffer"
+    },
+    "line_comment": {
+      "type": "PATTERN",
+      "value": ";.*"
+    },
+    "float": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 3,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "-"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "PATTERN",
+              "value": "[0-9]+\\.[0-9]+"
+            }
+          ]
+        }
+      }
+    },
+    "int": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 2,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "-"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "PATTERN",
+              "value": "[0-9]+"
+            }
+          ]
+        }
+      }
+    },
+    "number": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "float"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        }
+      ]
+    },
+    "alphatest": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+<<<<<<< HEAD
+          "value": "alphatest"
+=======
+          "value": "alpha"
+>>>>>>> 535f5ea (Initial commit)
+        },
+        {
+          "type": "SYMBOL",
+          "name": "number"
+        }
+      ]
+    },
+    "constant": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "constant"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "color"
+        }
+      ]
+    },
+    "color": {
+      "type": "CHOICE",
+      "members": [
+        {
+<<<<<<< HEAD
+          "type": "SYMBOL",
+          "name": "hexcode"
+=======
+          "type": "PATTERN",
+          "value": "#[0-9A-G]+"
+>>>>>>> 535f5ea (Initial commit)
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "("
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "number"
+                    },
+                    {
+                      "type": "REPEAT",
+                      "content": {
+                        "type": "SEQ",
+                        "members": [
+                          {
+                            "type": "STRING",
+                            "value": ","
+                          },
+                          {
+                            "type": "SYMBOL",
+                            "name": "number"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "STRING",
+                          "value": ","
+                        },
+                        {
+                          "type": "BLANK"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ")"
+            }
+          ]
+        }
+      ]
+    },
+<<<<<<< HEAD
+    "cull": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "cull"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cullface"
+        }
+      ]
+    },
+    "cullface": {
+      "type": "PATTERN",
+      "value": "back|front|none"
+    },
+    "hexcode": {
+      "type": "PATTERN",
+      "value": "#[0-9A-F]+",
+      "flags": "i"
+    },
+=======
+>>>>>>> 535f5ea (Initial commit)
+    "testfunc": {
+      "type": "PATTERN",
+      "value": "always|never|equal|notequal|less|lessequal|greater|greaterequal"
+    },
+    "writemask": {
+      "type": "PATTERN",
+      "value": "red|green|blue|alpha|color|depth|all"
+    },
+    "write": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "write"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "writemask"
+        }
+      ]
+    },
+    "depthtest": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "depthtest"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "testfunc"
+        }
+      ]
+    },
+    "normal": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "normal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "texture"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "normalselector"
+        }
+      ]
+    },
+    "normalselector": {
+      "type": "PATTERN",
+      "value": "bump|tangent"
+    },
+    "version": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ".version"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        }
+      ]
+<<<<<<< HEAD
+    },
+    "picaasm": {
+      "type": "PATTERN",
+      "value": "[\\x00-\\x7A\\x7C\\x7E\\x7F\\s]*"
+    },
+    "picablock": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "picaasm"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "picainclude": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": ".[vg]sh"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PREC",
+              "value": 2,
+              "content": {
+                "type": "SYMBOL",
+                "name": "identifier"
+              }
+            },
+            {
+              "type": "PREC",
+              "value": 1,
+              "content": {
+                "type": "SYMBOL",
+                "name": "picablock"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "tcblock": {
+      "type": "PATTERN",
+      "value": ".tc"
+    },
+    "section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "tcblock"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "picainclude"
+        }
+      ]
+=======
+>>>>>>> 535f5ea (Initial commit)
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": " |\\t|\\r"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "line_comment"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
