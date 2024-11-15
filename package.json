@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-pica200",
+  "name": "tree-sitter-qlsl",
   "version": "0.0.1",
   "description": "PICA200 tree-sitter syntax",
   "main": "bindings/node",
@@ -15,9 +15,9 @@
     "tree-sitter-cli": "^0.21.0"
   },
   "tree-sitter": [{
-    "scope": "source.pica",
+    "scope": "source.qlsl",
     "file-types": [
-      "qltc"
+      "qlsl"
     ],
     "highlights": [
       "queries/highlights.scm"
