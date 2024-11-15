@@ -16,7 +16,8 @@ constant #FFFFFFFF
 (program
 	(declaration
 		(constant
-			(color))))
+			(color
+				(hexcode)))))
 			
 ==========
 Per-component colour declaration

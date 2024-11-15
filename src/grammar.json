@@ -2,7 +2,6 @@
   "name": "combiner",
   "rules": {
     "program": {
-<<<<<<< HEAD
       "type": "SEQ",
       "members": [
         {
@@ -72,55 +71,10 @@
             },
             {
               "type": "BLANK"
-=======
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_item"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "REPEAT1",
-                    "content": {
-                      "type": "STRING",
-                      "value": "\n"
-                    }
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "_item"
-                  }
-                ]
-              }
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "REPEAT1",
-                  "content": {
-                    "type": "STRING",
-                    "value": "\n"
-                  }
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
->>>>>>> 535f5ea (Initial commit)
             }
           ]
         },
         {
-<<<<<<< HEAD
           "type": "CHOICE",
           "members": [
             {
@@ -170,9 +124,6 @@
               "type": "BLANK"
             }
           ]
-=======
-          "type": "BLANK"
->>>>>>> 535f5ea (Initial commit)
         }
       ]
     },
@@ -186,13 +137,6 @@
         {
           "type": "SYMBOL",
           "name": "declaration"
-<<<<<<< HEAD
-=======
-        },
-        {
-          "type": "SYMBOL",
-          "name": "version"
->>>>>>> 535f5ea (Initial commit)
         }
       ]
     },
@@ -341,13 +285,10 @@
         {
           "type": "SYMBOL",
           "name": "depthtest"
-<<<<<<< HEAD
         },
         {
           "type": "SYMBOL",
           "name": "cull"
-=======
->>>>>>> 535f5ea (Initial commit)
         }
       ]
     },
@@ -444,11 +385,7 @@
       "members": [
         {
           "type": "STRING",
-<<<<<<< HEAD
           "value": "alphatest"
-=======
-          "value": "alpha"
->>>>>>> 535f5ea (Initial commit)
         },
         {
           "type": "SYMBOL",
@@ -473,13 +410,8 @@
       "type": "CHOICE",
       "members": [
         {
-<<<<<<< HEAD
           "type": "SYMBOL",
           "name": "hexcode"
-=======
-          "type": "PATTERN",
-          "value": "#[0-9A-G]+"
->>>>>>> 535f5ea (Initial commit)
         },
         {
           "type": "SEQ",
@@ -541,7 +473,6 @@
         }
       ]
     },
-<<<<<<< HEAD
     "cull": {
       "type": "SEQ",
       "members": [
@@ -564,8 +495,6 @@
       "value": "#[0-9A-F]+",
       "flags": "i"
     },
-=======
->>>>>>> 535f5ea (Initial commit)
     "testfunc": {
       "type": "PATTERN",
       "value": "always|never|equal|notequal|less|lessequal|greater|greaterequal"
@@ -637,7 +566,6 @@
           "name": "int"
         }
       ]
-<<<<<<< HEAD
     },
     "picaasm": {
       "type": "PATTERN",
@@ -706,8 +634,6 @@
           "name": "picainclude"
         }
       ]
-=======
->>>>>>> 535f5ea (Initial commit)
     }
   },
   "extras": [

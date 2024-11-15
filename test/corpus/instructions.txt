@@ -37,11 +37,7 @@ interpolate tex0, constant, tex3
 ==========
 Alpha test
 ==========
-<<<<<<< HEAD
 alphatest 0.5
-=======
-alpha 0.5
->>>>>>> 535f5ea (Initial commit)
 ---
 (program
 	(instr
@@ -70,12 +66,8 @@ write color
 (program
 	(instr
 		(selectorinstr
-<<<<<<< HEAD
 			(write
 				(writemask)))))
-=======
-			(write))))
->>>>>>> 535f5ea (Initial commit)
 
 ==========
 Depth test
@@ -86,18 +78,4 @@ depthtest greater
 	(instr
 		(selectorinstr
 			(depthtest
-<<<<<<< HEAD
-				(testfunc)))))
-
-==========
-Culling
-==========
-cull back
----
-(program
-	(instr
-		(selectorinstr
-			(cull
-=======
->>>>>>> 535f5ea (Initial commit)
 				(testfunc)))))

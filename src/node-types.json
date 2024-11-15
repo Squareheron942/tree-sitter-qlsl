@@ -23,13 +23,10 @@
       "required": false,
       "types": [
         {
-<<<<<<< HEAD
           "type": "hexcode",
           "named": true
         },
         {
-=======
->>>>>>> 535f5ea (Initial commit)
           "type": "number",
           "named": true
         }
@@ -78,7 +75,6 @@
     }
   },
   {
-<<<<<<< HEAD
     "type": "cull",
     "named": true,
     "fields": {},
@@ -94,8 +90,6 @@
     }
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "declaration",
     "named": true,
     "fields": {},
@@ -195,7 +189,6 @@
     }
   },
   {
-<<<<<<< HEAD
     "type": "picablock",
     "named": true,
     "fields": {},
@@ -230,8 +223,6 @@
     }
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "program",
     "named": true,
     "fields": {},
@@ -248,13 +239,10 @@
           "named": true
         },
         {
-<<<<<<< HEAD
           "type": "section",
           "named": true
         },
         {
-=======
->>>>>>> 535f5ea (Initial commit)
           "type": "version",
           "named": true
         }
@@ -262,7 +250,6 @@
     }
   },
   {
-<<<<<<< HEAD
     "type": "section",
     "named": true,
     "fields": {},
@@ -282,8 +269,6 @@
     }
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "selectorinstr",
     "named": true,
     "fields": {},
@@ -296,13 +281,10 @@
           "named": true
         },
         {
-<<<<<<< HEAD
           "type": "cull",
           "named": true
         },
         {
-=======
->>>>>>> 535f5ea (Initial commit)
           "type": "depthtest",
           "named": true
         },
@@ -387,11 +369,7 @@
     "named": false
   },
   {
-<<<<<<< HEAD
     "type": "alphatest",
-=======
-    "type": "alpha",
->>>>>>> 535f5ea (Initial commit)
     "named": false
   },
   {
@@ -403,7 +381,6 @@
     "named": false
   },
   {
-<<<<<<< HEAD
     "type": "cull",
     "named": false
   },
@@ -412,8 +389,6 @@
     "named": true
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "depthtest",
     "named": false
   },
@@ -426,13 +401,10 @@
     "named": true
   },
   {
-<<<<<<< HEAD
     "type": "hexcode",
     "named": true
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "identifier",
     "named": true
   },
@@ -457,7 +429,6 @@
     "named": true
   },
   {
-<<<<<<< HEAD
     "type": "picaasm",
     "named": true
   },
@@ -466,8 +437,6 @@
     "named": true
   },
   {
-=======
->>>>>>> 535f5ea (Initial commit)
     "type": "testfunc",
     "named": true
   },
@@ -482,7 +451,6 @@
   {
     "type": "writemask",
     "named": true
-<<<<<<< HEAD
   },
   {
     "type": "{",
@@ -491,7 +459,5 @@
   {
     "type": "}",
     "named": false
-=======
->>>>>>> 535f5ea (Initial commit)
   }
 ]

@@ -1,23 +1,13 @@
 ; General
 [
-<<<<<<< HEAD
 	(selectorinstr)
 	(combineinstr)
 ] @function.call
-=======
-	(alphatest)
-	(normal)
-	(combineinstr)
-	(write)
-	(depthtest)
-] @function
->>>>>>> 535f5ea (Initial commit)
 
 [
 	(normalselector)
 	(writemask)
 	(testfunc)
-<<<<<<< HEAD
 	(cullface)
 ] @enum
 
@@ -29,11 +19,6 @@
 (picablock) @variable.builtin
 
 
-=======
-] @enum
-
-(declaration) @keyword
->>>>>>> 535f5ea (Initial commit)
 (identifier) @variable.builtin
 
 (tevsrc) @type.builtin
@@ -43,10 +28,7 @@
 [
 	(input)
 	(version (int) @number)
-<<<<<<< HEAD
 	(hexcode)
-=======
->>>>>>> 535f5ea (Initial commit)
 ] @constant
 
 ; Comments
