@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-qlsl",
   "version": "0.0.1",
-  "description": "PICA200 tree-sitter syntax",
+  "description": "QLSL tree-sitter syntax",
   "main": "bindings/node",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

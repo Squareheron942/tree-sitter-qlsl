@@ -1,5 +1,5 @@
 module.exports = grammar({
-	name: "combiner",
+	name: "qlsl",
 	extras: ($) => [/ |\t|\r/, $.line_comment],
 
 	rules: {
