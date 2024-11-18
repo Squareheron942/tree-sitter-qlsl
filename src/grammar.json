@@ -157,6 +157,10 @@
             {
               "type": "SYMBOL",
               "name": "gpu_input"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "color"
             }
           ]
         },
@@ -266,33 +270,24 @@
       ]
     },
     "declaration": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
+          "type": "SYMBOL",
+          "name": "texture"
+        },
+        {
+          "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "texture"
+              "name": "identifier"
             },
             {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "input"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "input"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "constant"
         }
       ]
     },
@@ -334,7 +329,7 @@
     },
     "gpu_input": {
       "type": "PATTERN",
-      "value": "primary|fragment_primary|fragment_secondary|previous|constant|previous_buffer"
+      "value": "primary|fragment_primary|fragment_secondary|previous|previous_buffer"
     },
     "line_comment": {
       "type": "PATTERN",
@@ -419,19 +414,6 @@
         {
           "type": "SYMBOL",
           "name": "number"
-        }
-      ]
-    },
-    "constant": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "constant"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "color"
         }
       ]
     },

@@ -12,32 +12,42 @@ replace tex0
 ==========
 Combine instruction -- Two args
 ==========
-add tex0, constant
+add tex0, (1, 1, 1, 1)
 ---
 (program
 	(instr
 		(combineinstr
 			(combinefunc)
-			(tevsrc (texture))
-			(tevsrc (gpu_input)))))
+			(tevsrc 
+				(texture))
+			(tevsrc 
+				(color 
+					(number
+						(int)) 
+					(number
+						(int)) 
+					(number
+						(int)) 
+					(number 
+						(int)))))))
 
 ==========
 Combine instruction -- Three args
 ==========
-interpolate tex0, constant, tex3
+interpolate tex0, #DEADBEEF, tex3
 ---
 (program
 	(instr
 		(combineinstr
 			(combinefunc)
 			(tevsrc (texture))
-			(tevsrc (gpu_input))
+			(tevsrc (color (hexcode)))
 			(tevsrc (texture)))))
 
 ==========
 Combine instruction -- Mode selector
 ==========
-interpolate rgb tex0, constant, tex3
+interpolate rgb tex0, #ffffffff, tex3
 ---
 (program
 	(instr
@@ -45,13 +55,13 @@ interpolate rgb tex0, constant, tex3
 			(combinefunc)
 			(texenvmode)
 			(tevsrc (texture))
-			(tevsrc (gpu_input))
+			(tevsrc (color (hexcode)))
 			(tevsrc (texture)))))
 
 ==========
 Combine instruction -- tevop
 ==========
-interpolate rgb tex0.r, constant.inva, tex3.rgb
+interpolate rgb tex0.r, (1.0, 0, 1, 0.0).inva, tex3.rgb
 ---
 (program
 	(instr
@@ -59,8 +69,49 @@ interpolate rgb tex0.r, constant.inva, tex3.rgb
 			(combinefunc)
 			(texenvmode)
 			(tevsrc (texture) (tevop))
-			(tevsrc (gpu_input) (tevop))
+			(tevsrc (color
+				(number
+					(float))
+				(number
+					(int))
+				(number
+					(int))
+				(number
+					(float))) (tevop))
 			(tevsrc (texture) (tevop)))))
+
+==========
+Hex colour
+==========
+replace #FFFFFFFF
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(tevsrc
+				(color
+					(hexcode))))))
+
+==========
+Per-component colour
+==========
+replace (0.0, 1, 0, 1.0)
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(tevsrc
+				(color
+					(number
+						(float))
+					(number
+						(int))
+					(number
+						(int))
+					(number
+						(float)))))))
 
 ==========
 Alpha test

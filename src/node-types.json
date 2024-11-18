@@ -64,21 +64,6 @@
     }
   },
   {
-    "type": "constant",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "color",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "cull",
     "named": true,
     "fields": {},
@@ -101,10 +86,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "constant",
-          "named": true
-        },
         {
           "type": "identifier",
           "named": true
@@ -312,6 +293,10 @@
       "required": true,
       "types": [
         {
+          "type": "color",
+          "named": true
+        },
+        {
           "type": "gpu_input",
           "named": true
         },
@@ -383,10 +368,6 @@
   {
     "type": "combinefunc",
     "named": true
-  },
-  {
-    "type": "constant",
-    "named": false
   },
   {
     "type": "cull",
