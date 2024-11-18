@@ -9,6 +9,7 @@
 	(writemask)
 	(testfunc)
 	(cullface)
+	(texenvmode)
 ] @enum
 
 [
@@ -17,13 +18,12 @@
 
 (section) @label
 (picablock) @variable.builtin
-
-
 (identifier) @variable.builtin
 
 (tevsrc) @type.builtin
 (normal
 	(texture) @type.builtin)
+(tevop) @type.qualifier
 
 [
 	(input)

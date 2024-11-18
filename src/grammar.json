@@ -145,15 +145,32 @@
       "value": "add|sub|modulate|replace|add_signed|interpolate|dot3_rgb|dot3_rgba|multiply_add|add_multiply"
     },
     "tevsrc": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "texture"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "texture"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "gpu_input"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "gpu_input"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "tevop"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -167,6 +184,18 @@
             "type": "SYMBOL",
             "name": "combinefunc"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "texenvmode"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "CHOICE",
@@ -553,6 +582,14 @@
     "normalselector": {
       "type": "PATTERN",
       "value": "bump|tangent"
+    },
+    "texenvmode": {
+      "type": "PATTERN",
+      "value": "rgb[a]?|a"
+    },
+    "tevop": {
+      "type": "PATTERN",
+      "value": "\\.(inv)?(rgb[a]?|[rgba])"
     },
     "version": {
       "type": "SEQ",

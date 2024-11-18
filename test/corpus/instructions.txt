@@ -35,6 +35,34 @@ interpolate tex0, constant, tex3
 			(tevsrc (texture)))))
 
 ==========
+Combine instruction -- Mode selector
+==========
+interpolate rgb tex0, constant, tex3
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(texenvmode)
+			(tevsrc (texture))
+			(tevsrc (gpu_input))
+			(tevsrc (texture)))))
+
+==========
+Combine instruction -- tevop
+==========
+interpolate rgb tex0.r, constant.inva, tex3.rgb
+---
+(program
+	(instr
+		(combineinstr
+			(combinefunc)
+			(texenvmode)
+			(tevsrc (texture) (tevop))
+			(tevsrc (gpu_input) (tevop))
+			(tevsrc (texture) (tevop)))))
+
+==========
 Alpha test
 ==========
 alphatest 0.5

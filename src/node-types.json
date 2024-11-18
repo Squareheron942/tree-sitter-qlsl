@@ -55,6 +55,10 @@
         {
           "type": "tevsrc",
           "named": true
+        },
+        {
+          "type": "texenvmode",
+          "named": true
         }
       ]
     }
@@ -304,11 +308,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "gpu_input",
+          "named": true
+        },
+        {
+          "type": "tevop",
           "named": true
         },
         {
@@ -438,6 +446,14 @@
   },
   {
     "type": "testfunc",
+    "named": true
+  },
+  {
+    "type": "tevop",
+    "named": true
+  },
+  {
+    "type": "texenvmode",
     "named": true
   },
   {
