@@ -13,7 +13,7 @@
 ] @enum
 
 [
-	(declaration) 
+	(declaration)
 ] @keyword
 
 (section) @label
