@@ -142,7 +142,7 @@
     },
     "combinefunc": {
       "type": "PATTERN",
-      "value": "add|sub|modulate|replace|add_signed|interpolate|dot3_rgb|dot3_rgba|multiply_add|add_multiply"
+      "value": "add|sub|modulate|replace|add_signed|lerp|dot3_rgb|dot3_rgba|multiply_add|add_multiply"
     },
     "tevsrc": {
       "type": "SEQ",
@@ -602,8 +602,8 @@
           "name": "picaasm"
         },
         {
-          "type": "STRING",
-          "value": "}"
+          "type": "PATTERN",
+          "value": "\\n\\s*}"
         }
       ]
     },

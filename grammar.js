@@ -11,7 +11,7 @@ module.exports = grammar({
 		),
 		_item: ($) => choice($.instr, $.declaration),
 		combinefunc: ($) =>
-			/add|sub|modulate|replace|add_signed|interpolate|dot3_rgb|dot3_rgba|multiply_add|add_multiply/,
+			/add|sub|modulate|replace|add_signed|lerp|dot3_rgb|dot3_rgba|multiply_add|add_multiply/,
 		tevsrc: ($) => seq(choice($.texture, $.gpu_input, $.color), optional($.tevop)),
 		combineinstr: ($) =>
 			seq(field("kind", $.combinefunc), optional($.texenvmode), sep(",", $.tevsrc)),
@@ -51,7 +51,7 @@ module.exports = grammar({
 		tevop: ($) => /\.(inv)?(rgb[a]?|[rgba])/,
 		version: ($) => seq(".version", $.int),
 		picaasm: ($) => /[\x00-\x7A\x7C\x7E\x7F\s]*/,
-		picablock: ($) => seq("{", $.picaasm, "}"),
+		picablock: ($) => seq("{", $.picaasm, /\n\s*}/),
 		picainclude: ($) => seq(/.[vg]sh/, choice(prec(2, $.identifier), prec(1, $.picablock))),
 		tcblock: ($) => /.tc/,
 		section: ($) => choice($.tcblock, $.picainclude)
